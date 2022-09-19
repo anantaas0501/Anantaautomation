@@ -1,0 +1,19 @@
+package Pomclasses;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class PIM extends LoginPage {
+
+	public PIM(WebDriver d) {
+		super();
+	}
+	
+	public static void  dc() {
+		d.findElement(By.xpath("//div[@class='orangehrm-header-container']/button")).click();
+	}
+	
+	public static void main(String[] args) {
+		dc();
+	}
+}

@@ -1,0 +1,20 @@
+package as;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Ase {
+
+	
+	public static void fg() {
+		System.setProperty("webdriver.chromedriver", "C:\\selenium\\chromedriver.exe\\");
+		WebDriver driver = new ChromeDriver();
+
+		//Navigating through a particular website
+		driver.get("https://www.browserstack.com");
+	}
+	
+	public static void main(String[] args) {
+		fg();
+	}
+}

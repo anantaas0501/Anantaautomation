@@ -1,0 +1,32 @@
+package Pomclasses;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+
+
+public class Asw {
+
+	static WebDriver d;
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\91885\\ananta\\chromedriver.exe\\");
+		 d = new ChromeDriver();
+			d.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+			d.manage().deleteAllCookies();
+			d.manage().window().maximize();
+			d.navigate().to("https://www.amazon.in/");
+			Thread.sleep(5000);
+			d.findElement(By.id("twotabsearchtextbox")).sendKeys("one plus nord");
+			Thread.sleep(3000);
+			d.findElement(By.xpath("(//div[contains(@class,'s-suggestion s-suggestion-ellipsis-direction')])[5]")).click();
+				
+	
+			
+	}
+}

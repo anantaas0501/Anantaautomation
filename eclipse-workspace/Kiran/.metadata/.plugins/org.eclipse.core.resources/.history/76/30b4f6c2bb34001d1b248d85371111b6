@@ -1,0 +1,53 @@
+package hrmTestclasses;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import junit.framework.Assert;
+import pomclasses.HomePage;
+
+public class Homepage {
+
+	static WebDriver d;
+	HomePage hom;
+	public Homepage() {
+		super();
+	}
+	@BeforeMethod
+	public void Setup() {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\91885\\ananta\\chromedriver.exe");	
+		d = new ChromeDriver();
+		d.manage().window().maximize();
+		d.manage().deleteAllCookies();
+		d.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+		d.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		d.navigate().to("https://www.snapdeal.com/");
+	}
+	
+	@Test
+	public void VerifysearchFieldenble() {
+		 hom=new HomePage(d);
+		boolean field=hom.Verifysearchfieldenable();
+		Assert.assertTrue(true);
+		
+	}
+	
+	@Test
+	public void Verifysearchfielddisble() {
+		 boolean seearchfield=hom.Verifysearchfielddisplayed();
+		 Assert.assertTrue(true);
+	}
+	@AfterMethod
+	public void SuiteTeardown() {
+		d.quit();
+	}
+
+
+}
+	
+

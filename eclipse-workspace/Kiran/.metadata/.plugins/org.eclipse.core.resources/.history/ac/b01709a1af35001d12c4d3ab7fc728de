@@ -1,0 +1,33 @@
+package pomclasses;
+
+import java.util.Iterator;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class As {
+
+	static WebDriver d;
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\91885\\ananta\\chromedriver.exe");	
+		d = new ChromeDriver();
+		d.manage().window().maximize();
+		d.manage().deleteAllCookies();
+		d.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+		d.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		d.navigate().to("https://www.loksatta.com/");
+		Thread.sleep(5000);
+		d.findElement(By.linkText("सत्ताकारण")).click();
+		Set<String >handler =d.getWindowHandles();
+		Iterator<String >windowids=handler.iterator();
+		String parentwindowid=windowids.next();
+		String chidwindowid=windowids.next();
+		d.switchTo().window(chidwindowid);
+		d.close();
+//		d.switchTo().window(parentwindowid);
+		
+}
+}

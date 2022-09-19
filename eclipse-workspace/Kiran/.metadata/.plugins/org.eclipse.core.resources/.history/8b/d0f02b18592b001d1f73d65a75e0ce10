@@ -1,0 +1,45 @@
+package Pomclasses;
+
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
+
+
+
+public class Asw {
+
+	static WebDriver d;
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\91885\\ananta\\chromedriver.exe\\");
+		 d = new ChromeDriver();
+			d.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+			d.manage().deleteAllCookies();
+			d.manage().window().maximize();
+			d.navigate().to("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+			Thread.sleep(5000);
+			d.findElement(By.xpath("//input[@name='username']")).sendKeys("Admin");
+			Thread.sleep(3000);
+			d.findElement(By.xpath("//input[@name='password']")).sendKeys("admin123");
+//			Thread.sleep(5000);
+//			JavascriptExecutor sz=	((JavascriptExecutor)d);
+//			sz.executeScript("window.scrollBy(0,80)","");
+			d.findElement(By.xpath("//button[@type='submit']")).click();
+		
+			Thread.sleep(3000);
+			WebElement ae=d.findElement(By.xpath("(//div[@class='oxd-select-text oxd-select-text--active']/div/following::div/i)[1]"));
+			Actions AZ=new Actions(d);
+			AZ.moveToElement(ae).pause(10000).build().perform();
+			
+				
+	
+			
+	}
+}

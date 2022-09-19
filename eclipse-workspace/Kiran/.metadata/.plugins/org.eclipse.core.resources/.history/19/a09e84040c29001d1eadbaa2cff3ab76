@@ -1,0 +1,43 @@
+package Pomclasses;
+
+import java.io.IOException;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class PIM extends LoginPage {
+	LoginPage log;
+	public PIM(WebDriver d) {
+		super(d);
+	}
+	
+	public static void  dc() throws InterruptedException, IOException {
+		d.findElement(By.xpath("//div[@class='orangehrm-header-container']/button")).click();
+		Thread.sleep(3000);
+		d.findElement(By.xpath("//button[@class='oxd-icon-button employee-image-action']/i")).click();
+		Thread.sleep(3000);
+		try {
+			Runtime.getRuntime().exec("C:\\Users\\91885\\eclipse-workspace\\Kiran\\ass\\AutoIt\\asd.exe");
+		} catch (IOException e) {
+		
+			e.printStackTrace();
+		}
+		d.findElement(By.xpath("//input[@name='firstName']")).sendKeys("amol");
+		Thread.sleep(2000);
+		d.findElement(By.xpath("//input[@name='middleName']")).sendKeys("asdf");
+		Thread.sleep(2000);
+		d.findElement(By.xpath("//input[@name='lastName']")).sendKeys("sddf");
+		Thread.sleep(2000);
+		d.findElement(By.xpath("//label[@class='oxd-label']/following::div/input")).clear();
+		Thread.sleep(2000);
+		d.findElement(By.xpath("//label[@class='oxd-label']/following::div/input")).sendKeys("12345");
+		
+	}
+	
+	public static void main(String[] args) throws InterruptedException, IOException {
+		LoginPage log=new LoginPage (d);
+		log.fg();
+		Thread.sleep(3000);
+		dc();
+	}
+}

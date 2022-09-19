@@ -1,0 +1,28 @@
+package as;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Ase {
+
+	static WebDriver d;
+	public static void fg() throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "C:\\selenium\\chromedriver.exe\\");
+		 d = new ChromeDriver();
+		d.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+		d.manage().deleteAllCookies();
+		d.manage().window().maximize();
+	
+		d.findElement(By.xpath("(//i[@class='oxd-icon bi-person oxd-input-group__label-icon']/following::label/following::div/input)[1]")).sendKeys("Admin");
+		Thread.sleep(3000);
+		d.findElement(By.xpath("//input[@name='password']")).sendKeys("admin123");
+		Thread.sleep(3000);
+		d.findElement(By.xpath("//button[@type='submit']")).click();
+		d.quit();
+	}
+	
+	public static void main(String[] args) throws InterruptedException {
+		fg();
+	}
+}

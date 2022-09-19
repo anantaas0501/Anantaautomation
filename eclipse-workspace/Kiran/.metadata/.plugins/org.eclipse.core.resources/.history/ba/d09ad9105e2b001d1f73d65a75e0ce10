@@ -1,0 +1,39 @@
+package Pomclasses;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class PIM  {
+	
+	@FindBy(xpath="(//div[@class='oxd-select-text oxd-select-text--active']/div/following::div/i)[1]")
+	private WebElement Empstatus;
+	static WebDriver d;
+	
+	
+	
+	
+	
+	public PIM(WebDriver d) {
+		this.d=d;
+		PageFactory.initElements(d, this);
+		
+	}
+	
+	public void SelectEmpStatus( ) {
+		WebElement fs=d.findElement(By.xpath("//div[@class='orangehrm-tabs-wrapper']/a[contains(text(),'Contact Details')]"));
+		JavascriptExecutor sb=((JavascriptExecutor)d);
+//		sb.executeScript("arguments[0].click();",  fs);
+	}
+		
+//		WebElement fs=d.findElement(By.xpath("//div[@class='orangehrm-tabs-wrapper']/a[contains(text(),'Contact Details')]"));
+//		JavascriptExecutor sb=((JavascriptExecutor)d);
+//		sb.executeScript("arguments[0].click();",  fs);
+//		sb.executeScript("window.scrollBy(0,90)", "");
+		
+		
+}

@@ -1,0 +1,55 @@
+package com.hrm.qa.testbase;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
+
+public class Testbase {
+
+	
+	public static WebDriver d;
+	public static Properties prop;
+	public  static EventFiringWebDriver e_driver;
+//	public static WebEventListener eventListener;
+	
+	
+	
+	
+	public static void initialization(){
+		prop=new Properties();
+		String projectpath=System.getProperty("user.dir");
+		try {
+			InputStream input= new FileInputStream(projectpath+"\\src\\main\\java\\config\\properties\\config.properties\\config.properties");
+			prop.load(input);
+			System.setProperty("webdriver.chrome.driver", "C:\\Users\\91885\\ananta\\chromedriver.exe");	
+			d = new ChromeDriver();
+		d.manage().window().maximize();
+		d.manage().deleteAllCookies();
+		d.get(prop.getProperty("url"));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	
+	
+	
+		
+		
+	}
+	
+}
+	
+	
+	
+	
+	
+	
+	
+
+
+

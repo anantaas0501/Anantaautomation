@@ -1,0 +1,44 @@
+package hrmTestClasses;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import Pomclasses.LoginPage;
+
+public class Logintest  extends LoginPage{
+
+	static WebDriver d;
+	
+	LoginPage log;
+	public Logintest(WebDriver d) {
+		super(d);
+		
+	}
+
+	
+	
+	@Test
+	public void VerifyLoginTest() {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\91885\\ananta\\chromedriver.exe");
+		 d = new ChromeDriver();
+			d.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+			d.manage().deleteAllCookies();
+			d.manage().window().maximize();
+		d.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+		
+		LoginPage log=new LoginPage(d);
+		log.enterusername();
+		log.enterpassword();
+		log.Clickonloginbtn();
+			
+		
+	}
+	
+
+	
+}

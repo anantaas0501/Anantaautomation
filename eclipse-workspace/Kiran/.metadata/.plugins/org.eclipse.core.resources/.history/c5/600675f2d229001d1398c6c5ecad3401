@@ -1,0 +1,38 @@
+package Pomclasses;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class Asw {
+
+	static WebDriver d;
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\91885\\ananta\\chromedriver.exe\\");
+		 d = new ChromeDriver();
+			d.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+			d.manage().deleteAllCookies();
+			d.manage().window().maximize();
+			d.get("https://www.amazon.in/");
+			Thread.sleep(5000);
+			d.findElement(By.linkText("Sign in")).click();
+			Thread.sleep(5000);
+			d.findElement(By.partialLinkText("Cond")).click();
+			Thread.sleep(3000);
+			d.findElement(By.linkText("All Help Topics")).click();
+			JavascriptExecutor sx=((JavascriptExecutor)d);
+			sx.executeScript("window.scrollBy(0,1500)", "");
+			Thread.sleep(3000);
+			d.findElement(By.linkText("About Us")).click();
+			Thread.sleep(10000);
+		WebElement as=	d.findElement(By.xpath("//button[@class='NavigationItem-icon NavigationItem-more']/preceding::ul/li/div/div/div/a[contains(text(),'What We Do')]"));
+			Actions act=new Actions(d);
+			act.moveToElement(as).perform();
+			
+	}
+}

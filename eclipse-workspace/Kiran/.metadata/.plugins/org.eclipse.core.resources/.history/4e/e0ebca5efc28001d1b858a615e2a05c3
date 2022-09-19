@@ -1,0 +1,37 @@
+package Pomclasses;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class LoginPage {
+
+	static WebDriver d;
+	
+	public LoginPage(WebDriver d) {
+		
+	}
+	public static void fg() throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\91885\\ananta\\chromedriver.exe\\");
+		 d = new ChromeDriver();
+		d.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+		d.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+		d.manage().deleteAllCookies();
+		d.manage().window().maximize();
+		Thread.sleep(5000);
+	
+		d.findElement(By.xpath("//input[@name='username']")).sendKeys("Admin");
+		Thread.sleep(5000);
+	
+		d.findElement(By.xpath("//input[@name='password']")).sendKeys("admin123");
+		Thread.sleep(5000);
+		d.findElement(By.xpath("//button[@type='submit']")).click();
+//		
+	}
+	
+	public static void main(String[] args) throws InterruptedException {
+		fg();
+	}
+}

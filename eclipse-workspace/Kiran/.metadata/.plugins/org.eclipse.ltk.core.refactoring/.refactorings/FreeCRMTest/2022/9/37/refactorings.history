@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;com.crm.qa.config&apos; to &apos;ko/src/main/java&apos;&#x0D;&#x0A;- Original project: &apos;FreeCRMTest&apos;&#x0D;&#x0A;- Destination element: &apos;ko/src/main/java&apos;&#x0D;&#x0A;- Original element: &apos;FreeCRMTest/src/main/java/com.crm.qa.config&apos;" description="Copy package" destination="=ko/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.crm.qa.config" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1662624591065" version="1.0"/>
+</session>

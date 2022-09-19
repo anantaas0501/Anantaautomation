@@ -1,0 +1,37 @@
+package Pomclasses;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class LoginPage {
+
+	static WebDriver d;
+	
+	public LoginPage(WebDriver d) {
+		
+	}
+	public static void fg() throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "C:\\selenium\\chromedriver_win32.zip\\chromedriver.exe\\");
+		 d = new ChromeDriver();
+		d.get("https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F");
+		d.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+		d.manage().deleteAllCookies();
+		d.manage().window().maximize();
+		Thread.sleep(5000);
+		d.findElement(By.xpath("//input[@id='Email']")).clear();
+		d.findElement(By.xpath("//input[@id='Email']")).sendKeys("admin@yourstore.com");
+		Thread.sleep(5000);
+		d.findElement(By.xpath("//input[@name='Password']")).clear();
+		d.findElement(By.xpath("//input[@name='Password']")).sendKeys("admin");
+		Thread.sleep(5000);
+		d.findElement(By.xpath("//button[@type='submit']")).click();
+//		
+	}
+	
+	public static void main(String[] args) throws InterruptedException {
+		fg();
+	}
+}

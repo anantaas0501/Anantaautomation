@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.robotframework.ide.project.editor.activePage.Ananta">
+		<item key="activePage" value="GeneralProjectConfigurationEditorPart"/>
+	</section>
+	<section name="org.robotframework.ide.project.editor.activePage.As">
+		<item key="activePage" value="GeneralProjectConfigurationEditorPart"/>
+	</section>
+	<section name="org.robotframework.ide.project.editor.activePage.Ae">
+		<item key="activePage" value="LibrariesProjectConfigurationEditorPart"/>
+	</section>
+	<section name="org.robotframework.ide.project.editor.activePage.Automation">
+		<item key="activePage" value="GeneralProjectConfigurationEditorPart"/>
+	</section>
+</section>

@@ -1,0 +1,23 @@
+package testbase;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Testbase {
+	 static WebDriver d;
+	
+	public Testbase() {
+		
+	}
+	public  void initialization(){
+	System.setProperty("webdriver.chrome.driver", "C:\\Users\\91885\\ananta\\chromedriver.exe");
+	 d = new ChromeDriver();
+		d.manage().timeouts().implicitlyWait(50,TimeUnit.SECONDS);
+		d.manage().deleteAllCookies();
+		d.manage().window().maximize();
+	d.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+	
+}
+}
