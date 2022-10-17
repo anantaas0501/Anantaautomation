@@ -1,0 +1,19 @@
+package pomclasses;
+
+
+
+
+
+public class Aw {
+	
+	public static void main(String[] args) throws InterruptedException {
+		int a=200;
+		int b=300;
+		String z="ananta";
+		System.out.println(z+(a+b));
+//		200300ananta
+		
+
+
+	}
+}

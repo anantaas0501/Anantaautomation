@@ -1,0 +1,23 @@
+package pomclasses;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class XpathAxes {
+	static WebDriver d;
+	public static void main(String[] args) throws InterruptedException  {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\91885\\ananta\\chromedriver.exe");	
+		d = new ChromeDriver();
+		d.manage().window().maximize();
+		d.manage().deleteAllCookies();
+		d.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+		d.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		d.navigate().to("https://careers.citigroup.com/students-and-graduates/");
+		Thread.sleep(3000);
+		d.findElement(By.xpath("//div[@class='container cookie-pref hidden']/preceding::div/child::a[text()='Accept all']")).click();
+		
+	}
+}

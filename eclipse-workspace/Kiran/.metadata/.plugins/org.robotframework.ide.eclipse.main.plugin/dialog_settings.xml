@@ -12,4 +12,7 @@
 	<section name="org.robotframework.ide.project.editor.activePage.Automation">
 		<item key="activePage" value="GeneralProjectConfigurationEditorPart"/>
 	</section>
+	<section name="org.robotframework.ide.project.editor.activePage.Asw">
+		<item key="activePage" value="GeneralProjectConfigurationEditorPart"/>
+	</section>
 </section>

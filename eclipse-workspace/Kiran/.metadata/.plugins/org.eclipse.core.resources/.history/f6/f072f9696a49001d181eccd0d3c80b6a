@@ -1,0 +1,117 @@
+package com.hrm.qa.pages;
+
+
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+
+
+
+
+public class XpathAxes {
+	static WebDriver d;
+	public static void main(String[] args) throws InterruptedException {
+		//		XpathAxes.tutorialninjawebsite();
+		//		 xpathusingcssamazonwebsite();
+		//		 xpathusingcssforsnapdeal();
+		xpathusingcssforssccgl();
+
+
+	}
+
+	public static void tutorialninjawebsite() throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\91885\\ananta\\chromedriver.exe");	
+		d = new ChromeDriver();
+		d.manage().window().maximize();
+		d.manage().deleteAllCookies();
+		d.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+		d.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		d.navigate().to("http://tutorialsninja.com/demo/index.php?route=account/register");
+		Thread.sleep(3000);
+		d.findElement(By.id("input-firstname")).sendKeys("Ananta");
+		Thread.sleep(3000);
+		d.findElement(By.name("lastname")).sendKeys("Shinde");
+		Thread.sleep(3000);
+		d.findElement(By.xpath("//input[@type='email']")).sendKeys("anantashinde2511@gmail.com");
+		Thread.sleep(3000);
+		d.findElement(By.cssSelector("input#input-telephone")).sendKeys("8857895054");
+		Thread.sleep(3000);
+		d.findElement(By.xpath("//input[contains(@name,'password')]")).sendKeys("Ananta@1997");
+		String privacypolicy=d.findElement(By.linkText("Privacy Policy")).getText();
+		System.out.println(privacypolicy);
+		privacypolicy.equals("Privacy Policy");
+		d.close();
+
+
+	}
+	public static void xpathusingcssamazonwebsite() throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\91885\\ananta\\chromedriver.exe");	
+		d = new ChromeDriver();
+		d.manage().window().maximize();
+		d.manage().deleteAllCookies();
+		d.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+		d.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		d.navigate().to("https://www.amazon.in/");
+		Thread.sleep(3000);
+		d.findElement(By.linkText("All")).click();
+		Thread.sleep(3000);
+		d.findElement(By.cssSelector("	div#hmenu-content>ul:first-of-type>li:nth-of-type(2)")).click();
+		Thread.sleep(3000);
+		d.findElement(By.cssSelector("div._p13n-zg-nav-tree-all_style_zg-browse-root__-jwNv>div:nth-of-type(2)>div:nth-of-type(2)")).click();
+		Thread.sleep(3000);
+		d.close();
+
+
+	}
+
+	public static void xpathusingcssforsnapdeal() throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\91885\\ananta\\chromedriver.exe");	
+		d = new ChromeDriver();
+		d.manage().window().maximize();
+		d.manage().deleteAllCookies();
+		d.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+		d.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		d.navigate().to("https://www.snapdeal.com/");
+		Thread.sleep(3000);
+		d.findElement(By.cssSelector("div#leftNavMenuRevamp>div>div>ul>li:nth-of-type(4)")).click();
+		Thread.sleep(3000);
+		d.findElement(By.cssSelector("#pincode-check-nba")).sendKeys("412105");
+		Thread.sleep(3000);
+		d.findElement(By.cssSelector("button[class^='btn btn-theme-secondary pincodeNbaSubmit button--reject nextBestActionTrack col-xs-16']")).click();
+		Thread.sleep(3000);
+		d.findElement(By.cssSelector("button[class^='btn btn-theme-secondary pincodeNbaSubmit button--reject nextBestActionTrack col-xs-16 changePincode']")).click();
+		d.close();
+
+	}
+	public static void xpathusingcssforssccgl() throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\91885\\ananta\\chromedriver.exe");	
+		d = new ChromeDriver();
+		d.manage().window().maximize();
+		d.manage().deleteAllCookies();
+		d.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+		d.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		d.navigate().to("https://ssc.nic.in/Registration/Home");
+		Thread.sleep(3000);
+		WebElement yesradiobutton=	d.findElement(By.cssSelector("#rbAadharYes"));
+		Actions action=new Actions(d);
+		action.click(yesradiobutton).perform();
+		Thread.sleep(3000);
+		d.findElement(By.cssSelector("input[id^='AadharNumber']")).sendKeys("587701134982");
+		Thread.sleep(3000);
+		d.findElement(By.cssSelector("input[id*='VerifyAadharNumber']")).sendKeys("587701134982");
+		Thread.sleep(3000);
+		d.findElement(By.cssSelector("input[id^='Name']")).sendKeys("Ananta");
+		Thread.sleep(3000);
+		d.findElement(By.cssSelector("div.formfieldCnt>input#VerifyName")).sendKeys("Ananta");
+		Thread.sleep(3000);
+		d.findElement(By.cssSelector("input[id^='FatherName']")).sendKeys("Arun");
+		
+	}
+}

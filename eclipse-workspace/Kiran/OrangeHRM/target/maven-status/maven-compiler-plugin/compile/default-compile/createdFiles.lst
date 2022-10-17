@@ -1,5 +1,0 @@
-com\hrm\qa\pages\PIM.class
-config\properties\As.class
-com\hrm\qa\testbase\Testbase.class
-com\hrm\qa\pages\LoginPage.class
-com\hrm\qa\util\TestUtil.class

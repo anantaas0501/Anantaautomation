@@ -1,0 +1,27 @@
+package pomclasses;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Aw {
+	
+	public static void main(String[] args) throws InterruptedException {
+		String a="100";
+		
+		int v=Integer.parseInt(a);
+		System.out.println(v+300);
+		
+		int s=200;
+		String w=String.valueOf(s);
+		System.out.println(w+  "Ananta");
+		
+		double zs=15.33;
+		String xs=String.valueOf(zs);
+		System.out.println(xs+"l"); 
+//		15.33a
+	}
+}

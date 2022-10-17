@@ -1,0 +1,17 @@
+package pomclasses;
+
+public class Contructor {
+
+	
+	String a;
+	int g;
+	
+	public Contructor() {
+		System.out.println("default--con");
+	}
+	public static void main(String[] args) {
+		
+
+	}
+
+}
